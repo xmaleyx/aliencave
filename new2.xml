@@ -2,3 +2,11 @@
 <name>sanya</name>
 <age>31</age>
 </boec>
+
+
+
+
+<film>
+  <filmname>Alien</filmname>
+  <genre>fantasticThriller</genre>
+</film>
