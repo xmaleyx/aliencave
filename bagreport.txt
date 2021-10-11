@@ -1,0 +1,43 @@
+{
+  "success": true,
+  "user": {
+    "first_login": false,
+    "id": 431,
+    "user_id": 431,
+    "email": "user+city@user.com",
+    "role": "user",
+    "name": "user city",
+    "first_name": "user",
+    "last_name": "city",
+    "photo": "https://d277bwi5aij72i.cloudfront.net/system/uploads/profile/photo/432/main_d9a436b80588908957877ae7657f83edfc106cf020160915-12802-emd3fp.jpg",
+    "photo_2x": "https://d277bwi5aij72i.cloudfront.net/system/uploads/profile/photo/432/main_2x_d9a436b80588908957877ae7657f83edfc106cf020160915-12802-emd3fp.jpg",
+    "photo_3x": "https://d277bwi5aij72i.cloudfront.net/system/uploads/profile/photo/432/main_3x_d9a436b80588908957877ae7657f83edfc106cf020160915-12802-emd3fp.jpg",
+    "photo_thumb": "https://d277bwi5aij72i.cloudfront.net/system/uploads/profile/photo/432/thumb_d9a436b80588908957877ae7657f83edfc106cf020160915-12802-emd3fp.jpg",
+    "photo_thumb_2x": "https://d277bwi5aij72i.cloudfront.net/system/uploads/profile/photo/432/thumb_2x_d9a436b80588908957877ae7657f83edfc106cf020160915-12802-emd3fp.jpg",
+    "photo_thumb_3x": "https://d277bwi5aij72i.cloudfront.net/system/uploads/profile/photo/432/thumb_3x_d9a436b80588908957877ae7657f83edfc106cf020160915-12802-emd3fp.jpg",
+    "bio": "user city bio",
+    "location": null,
+    "latitude": null,
+    "longitude": null,
+    "kind": "individual",
+    "following": false,
+    "following_status": "none",
+    "followers_count": 0,
+    "followings_count": 0,
+    "mutuals_count": 0,
+    "is_facebook_connected": false,
+    "is_twitter_connected": false,
+    "icards_created_count": 3,
+    "channels_posted_count": 0,
+    "active_icards_count": 0,
+    "notifications_count": 0,
+    "settings": {
+      "id": 432,
+      "require_follower_approval": true,
+      "show_in_public_searches": true,
+      "allow_push_notifications": true,
+      "everyone_can_see_watching_channels": true,
+      "everyone_can_see_what_im_doing": true
+    }
+  }
+} 
