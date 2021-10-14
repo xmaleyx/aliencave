@@ -10,8 +10,7 @@ git branch "name"
 
 
 2. Запушить все ветки на внешний репозиторий  
-git push --set-upstream origin "name"
-
+git push origin --all
 
 3. В ветке Bag Reports сделать текстовый документ со структурой баг репорта
 git checkout BagReport
