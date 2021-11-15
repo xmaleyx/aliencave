@@ -1,4 +1,4 @@
-1. Вывести всех работников чьи зарплаты есть в базе, вместе с зарплатами.
+5712021. Вывести всех работников чьи зарплаты есть в базе, вместе с зарплатами.
 select e.employee_name, s.monthly_salary 
 from employees e 
 inner join employee_salary es on es.employee_id = e.id
@@ -45,7 +45,7 @@ select e.employee_name, r.role_name
 from employees e 
 join roles_employee re on employee_id = e.id
 join roles r on re.role_id = r.id 
-where r.role_name like '%Java%';
+where r.role_name like '%Java d%';
 
 --8. Вывести имена и должность только Python разработчиков.
 
@@ -83,84 +83,91 @@ where r.role_name like '%Automation%';
 
 select e.employee_name, s.monthly_salary, r.role_name 
 from employees e
-join employee_salary es on employee_id = e.id
-join salary s on s.id = es.id
-join roles_employee re on re.employee_id = e.id
-join roles r on role_id = r.id 
+left join employee_salary es on es.employee_id = e.id 
+left join salary s on s.id = es.salary_id
+left join roles_employee re on re.employee_id = es.employee_id 
+left join roles r on r.id = re.role_id 
 where r.role_name like 'Junior%';
 
 
 --13. Вывести имена и зарплаты Middle специалистов
 select e.employee_name, s.monthly_salary, r.role_name 
 from employees e
-join employee_salary es on employee_id = e.id
-join salary s on s.id = es.id
-join roles_employee re on re.employee_id = e.id
-join roles r on role_id = r.id 
+left join employee_salary es on es.employee_id = e.id 
+left join salary s on s.id = es.salary_id
+left join roles_employee re on re.employee_id = es.employee_id 
+left join roles r on r.id = re.role_id 
 where r.role_name like 'Middle%';
 
 --14. Вывести имена и зарплаты Senior специалистов
 
 select e.employee_name, s.monthly_salary, r.role_name 
 from employees e
-join employee_salary es on es.employee_id = e.id
-join salary s on s.id = es.id
-join roles_employee re on re.employee_id = e.id
-join roles r on re.role_id = r.id 
+left join employee_salary es on es.employee_id = e.id 
+left join salary s on s.id = es.salary_id
+left join roles_employee re on re.employee_id = es.employee_id 
+left join roles r on r.id = re.role_id 
 where r.role_name like 'Senior%';
 
 --15. Вывести зарплаты Java разработчиков
 
-select s.monthly_salary, r.role_name 
-from salary s 
-join roles_employee re on role_id = s.id
-join roles r on r.id = re.id 
-where r.role_name like '%Java %';
+select r.role_name,s.monthly_salary 
+from roles r
+join roles_employee re on re.role_id = r.id
+join employees e on e.id= re.employee_id
+join employee_salary es on es.employee_id = e.id
+join salary s on s.id = es.salary_id
+where r.role_name like '%Java d%'
 
 --16. Вывести зарплаты Python разработчиков
 
-select s.monthly_salary, r.role_name 
-from salary s 
-join roles_employee re on role_id = s.id
-join roles r on r.id = re.id 
-where r.role_name like '%Python%';
+select r.role_name, s.monthly_salary 
+from roles r
+join roles_employee re on re.role_id = r.id
+join employees e on e.id= re.employee_id
+join employee_salary es on es.employee_id = e.id
+join salary s on s.id = es.salary_id
+where r.role_name like '%Python%'
 
 --17. Вывести имена и зарплаты Junior Python разработчиков
 
-select e.employee_name, s.monthly_salary, r.role_name 
-from employees e
-join employee_salary es on employee_id = e.id
-join salary s on s.id = es.id
-join roles_employee re on re.employee_id = e.id
-join roles r on role_id = r.id 
-where r.role_name like 'Junior Python%';
+select e.employee_name, s.monthly_salary 
+from roles r
+join roles_employee re on re.role_id = r.id
+join employees e on e.id= re.employee_id
+join employee_salary es on es.employee_id = e.id
+join salary s on s.id = es.salary_id
+where r.role_name like '%Junior Python%'
+
 
 --18. Вывести имена и зарплаты Middle JS разработчиков
 
-select e.employee_name, s.monthly_salary, r.role_name 
-from employees e
-join employee_salary es on employee_id = e.id
-join salary s on s.id = es.id
-join roles_employee re on re.employee_id = e.id
-join roles r on role_id = r.id 
+select e.employee_name, s.monthly_salary 
+from roles r
+join roles_employee re on re.role_id = r.id
+join employees e on e.id= re.employee_id
+join employee_salary es on es.employee_id = e.id
+join salary s on s.id = es.salary_id
 where r.role_name like 'Middle JavaScript%';
 
 --19. Вывести имена и зарплаты Senior Java разработчиков
 
-select e.employee_name, s.monthly_salary, r.role_name 
-from employees e
-join employee_salary es on employee_id = e.id
-join salary s on s.id = es.id
-join roles_employee re on re.employee_id = e.id
-join roles r on role_id = r.id 
+select e.employee_name, s.monthly_salary 
+from roles r
+join roles_employee re on re.role_id = r.id
+join employees e on e.id= re.employee_id
+join employee_salary es on es.employee_id = e.id
+join salary s on s.id = es.salary_id
 where r.role_name like 'Senior Java %';
 
 --20. Вывести зарплаты Junior QA инженеров
 
-select s.monthly_salary, r.role_name 
-from salary s 
-join roles_employee re on role_id = s.id
-join roles r on r.id = re.id 
+select r.role_name, s.monthly_salary 
+from roles r
+join roles_employee re on re.role_id = r.id
+join employees e on e.id= re.employee_id
+join employee_salary es on es.employee_id = e.id
+join salary s on s.id = es.salary_id
 where r.role_name like '%Junior%' and r.role_name like '%QA%';
 
 --21. Вывести среднюю зарплату всех Junior специалистов
@@ -204,21 +211,23 @@ left join roles_employee re on re.employee_id = e.id
 left join roles r on r.id = re.role_id
 where r.role_name like '%QA engineer%'
 
---25. Вывести количество QA инженеров
+--25. Вывести количество QA инженеров Тут я хз)
 
 select count(r.role_name) as QA_Enginier
 from roles r 
-left join roles_employee re on re.role_id = r.id 
+left join roles_employee re on re.role_id = r.id
+left join employees e on e.id = re.employee_id 
+left join employee_salary es on es.employee_id = re.employee_id
 where r.role_name like '%QA engineer%';
 
---26. Вывести количество Middle специалистов.
+--26. Вывести количество Middle специалистов Тут я тоже хз)
 
-select count(r.role_name) as QA_Enginier
+select count(r.role_name) as Middle
 from roles r 
 left join roles_employee re on re.role_id = r.id 
 where r.role_name like '%Middle%';
 
---27. Вывести количество разработчиков
+--27. Вывести количество разработчиков и тут тоже)
 
 select count(r.role_name) as developers
 from roles r 
